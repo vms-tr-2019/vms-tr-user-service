@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +17,6 @@ import vms.user.dto.UserDto;
 import vms.user.service.IUsers;
 
 @RestController
-@RequestMapping("/user")
 public class UserController {
 	
 	@Autowired
@@ -32,7 +32,7 @@ public class UserController {
 		return users.getUser(userId);
 	}
 
-	@PostMapping("/update/{user_id}")
+	@PutMapping("/update/{user_id}")
 	public OperationStatusEnum updateUser(@PathVariable("user_id") int userId, @RequestBody UserDto user) {
 		return users.updateUser(userId, user);
 	}
