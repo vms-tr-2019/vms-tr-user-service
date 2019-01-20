@@ -1,5 +1,7 @@
 package vms.user.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,6 +40,11 @@ public class UserController {
 	@DeleteMapping("/{user_id}")
 	public OperationStatusEnum removeUser(@PathVariable("user_id") int userId) {
 		return users.removeUser(userId);
+	}
+
+	@GetMapping("/all")
+	public List<UserDto> getAllUsers(){
+		return users.getAllUsers();
 	}
 
 }

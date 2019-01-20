@@ -1,5 +1,7 @@
 package vms.user.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +47,10 @@ public class UserService implements IUsers {
 		}
 		repo.deleteById(userId);
 		return OperationStatusEnum.OK;
+	}
+	@Override
+	public List<UserDto> getAllUsers(){
+		return repo.findAll();
 	}
 
 }

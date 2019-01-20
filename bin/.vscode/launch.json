@@ -4,13 +4,6 @@
             "type": "java",
             "name": "CodeLens (Launch) - ServerApplication",
             "request": "launch",
-            "mainClass": "src.main.java.vms.user.ServerApplication",
-            "projectName": "user"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - ServerApplication",
-            "request": "launch",
             "mainClass": "vms.user.ServerApplication",
             "projectName": "user"
         }
